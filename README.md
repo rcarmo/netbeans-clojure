@@ -1,6 +1,6 @@
 # Clojure Plug-in for NetBeans 7.4
 
-Forked from [@geertanjw](https://blogs.oracle.com/geertjan/entry/leiningen_clojure_and_netbeans_ide)'s original work.
+Forked from [@geertjanw](https://github.com/geertjanw)'s [original work](https://blogs.oracle.com/geertjan/entry/leiningen_clojure_and_netbeans_ide).
 
 # Roadmap:
 
