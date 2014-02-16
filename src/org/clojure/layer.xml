@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="Project">
+            <folder name="Clojure">
+                <file name="capproject.properties" url="templates/cap-project-template.properties">
+                    <attr name="template" boolvalue="true"/>
+                    <attr name="displayName" stringvalue="Clojure"/>
+                    <attr name="iconBase" stringvalue="org/clojure/filetype/clojure-icon.png"/>
+                    <attr name="instantiatingIterator" methodvalue="org.netbeans.modules.projecttemplates.ClojureProjectWizardIterator.create"/>
+                    <attr name="instantiatingWizardURL" urlvalue="nbresloc:/org/netbeans/modules/projecttemplates/clojureProject.html"/>
+                    <attr boolvalue="true" name="requireProject"/>
+                </file>
+                <!--                <file name="org-netbeans-modules-projecttemplates-ClojureProjectWizardIterator">
+                    org.netbeans.modules.projecttemplates.ClojureProjectWizardIterator
+                    <attr boolvalue="true" name="template"/>
+                    <attr name="displayName" stringvalue="Clojure"/>
+                    <attr name="iconBase" stringvalue="org/clojure/filetype/clojure-icon.png"/>
+                    <attr name="instantiatingWizardURL" urlvalue="nbresloc:/org/netbeans/modules/projecttemplates/clojureProject.html"/>
+                    <attr name="instantiatingIterator" newvalue="org.netbeans.modules.projecttemplates.ClojureProjectWizardIterator"/>
+                    <attr boolvalue="true" name="requireProject"/>
+                </file>-->
+            </folder>
+        </folder>
+    </folder>
+    
+    <folder name="org-netbeans-modules-javacard">
+        <!-- This folder is for templates used in project creation but which do
+        not make sense to make user-visible -->
+        <folder name="templates">
+            <file name="applet.xml" url="templates/applet.xml">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="javacard.xml" url="templates/javacard.xml">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="web.xml" url="templates/web.xml">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="project.clj" url="templates/project.clj">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="core.clj" url="templates/core.clj">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="coretest.clj" url="templates/test/core.clj">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="EAP_MANIFEST.MF" url="templates/EAP_MANIFEST.MF">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="CSLIB_MANIFEST.MF" url="templates/CSLIB_MANIFEST.MF">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="EXTLIB_MANIFEST.MF" url="templates/EXTLIB_MANIFEST.MF">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="WEB_MANIFEST.MF" url="templates/WEB_MANIFEST.MF">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="test.scr" url="templates/test.scr">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="web-index.html" url="templates/web-index.html">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="HelloServlet.java" url="templates/HelloServlet.template">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+            <file name="deployment.xml" url="templates/deployment.xml">
+                <attr name="template" boolvalue="true"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+            </file>
+        </folder>
+    </folder>
+    
+    <folder name="OptionsDialog">
+        <folder name="PreviewExamples">
+            <folder name="text">
+                <file name="x-clojure" url="ATemplate.clojure"/>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Editors">
+        <folder name="text">
+            <folder name="x-clojure">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.clojure.Bundle"/>
+                 <folder name="CodeTemplates">
+                    <file name="org-netbeans-modules-editor-settingsCustom-CodeTemplates.xml" url="CodeTemplates.xml"/>
+                </folder> 
+                <folder name="FontsColors">
+                    <folder name="NetBeans">
+                        <folder name="Defaults">
+                            <file name="FontAndColors.xml" url="FontAndColors.xml">
+                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.clojure.Bundle"/>
+                            </file>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Loaders">
+        <folder name="text">
+            <folder name="x-clojure">
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CopyAction.instance"/>
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-CutAction.instance"/>
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/Edit/org-openide-actions-DeleteAction.instance"/>
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-FileSystemAction.instance"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                    <file name="org-openide-actions-OpenAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-OpenAction.instance"/>
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-PropertiesAction.instance"/>
+                        <attr name="position" intvalue="1400"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-RenameAction.instance"/>
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="org-openide-actions-SaveAsTemplateAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-SaveAsTemplateAction.instance"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.shadow">
+                        <attr name="originalFile" stringvalue="Actions/System/org-openide-actions-ToolsAction.instance"/>
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="800"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="sep-5.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                </folder>
+                <!--<folder name="Factories">-->
+                <!--                    <file name="ClojureDataLoader.instance">
+                    <attr name="dataObjectClass" stringvalue="org.clojure.filetype.ClojureDataObject"/>
+                    <attr name="instanceCreate" methodvalue="org.openide.loaders.DataLoaderPool.factory"/>
+                    <attr name="mimeType" stringvalue="text/x-clojure"/>
+                </file>-->
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Services">
+        <folder name="MIMEResolver">
+            <file name="ClojureResolver.xml" url="ClojureResolver.xml">
+                <attr name="displayName" bundlevalue="org.clojure.Bundle#Services/MIMEResolver/ClojureResolver.xml"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,16 @@
+<!DOCTYPE fontscolors PUBLIC
+    "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN"
+    "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+<fontscolors>
+    <fontcolor name="symbol1" foreColor="FF990099">
+	<font style="bold" />
+    </fontcolor>
+    <fontcolor name="comment" foreColor="gray"/>
+    <fontcolor name="around" foreColor="FF009999"/>
+    <fontcolor name="keyword" foreColor="FF669933"/>
+    <fontcolor name="symbol" foreColor="black"/>
+    <fontcolor name="symbol2" foreColor="blue"/>
+    <fontcolor name="symbol3" foreColor="green"/>
+    <fontcolor name="symbol4" foreColor="orange"/>
+    <fontcolor name="whitespace" foreColor="black"/>
+</fontscolors>
