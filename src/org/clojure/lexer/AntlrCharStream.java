@@ -19,8 +19,8 @@ public class AntlrCharStream implements CharStream {
     }
     private int line = 1;
     private int charPositionInLine = 0;
-    private LexerInput input;
-    private String name;
+    private final LexerInput input;
+    private final String name;
     private int index = 0;
     private List<CharStreamState> markers;
     private int markDepth = 0;
@@ -90,7 +90,7 @@ public class AntlrCharStream implements CharStream {
     @Override
     public int mark() {
 	if (markers == null) {
-	    markers = new ArrayList<CharStreamState>();
+	    markers = new ArrayList();
 	    markers.add(null); // depth 0 means no backtracking, leave blank
 	}
 	markDepth++;

@@ -65,10 +65,10 @@ public final class ClojureProjectWizardIterator implements WizardDescriptor.Prog
     }
 
     @Override
-    public Set instantiate(ProgressHandle h) throws IOException {
+    public Set<FileObject> instantiate(ProgressHandle h) throws IOException {
         String projName = wizard.getProperty("projName").toString();
         String projDir = wizard.getProperty("projDir").toString();
-        Set<Object> results = new HashSet<Object>();
+        Set<FileObject> results = new HashSet<FileObject>();
         File file = new File(projDir);
         FileObject dest = FileUtil.toFileObject(FileUtil.normalizeFile(file));
 //        Callable<Process> processCallable = new Callable<Process>() {
@@ -98,7 +98,7 @@ public final class ClojureProjectWizardIterator implements WizardDescriptor.Prog
     }
 
     @Override
-    public Set instantiate() throws IOException {
+    public Set<FileObject> instantiate() throws IOException {
         throw new UnsupportedOperationException("Not supported."); //NOI18N
     }
     

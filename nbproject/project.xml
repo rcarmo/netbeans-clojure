@@ -204,7 +204,13 @@
                     </run-dependency>
                 </dependency>
             </module-dependencies>
-            <public-packages/>
+            <public-packages>
+                <package>org.clojure</package>
+                <package>org.clojure.filetype</package>
+                <package>org.clojure.lexer</package>
+                <package>org.netbeans.modules.projecttemplates</package>
+                <package>org.netbeans.modules.projecttype</package>
+            </public-packages>
         </data>
     </configuration>
 </project>

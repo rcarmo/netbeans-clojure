@@ -12,8 +12,6 @@ import org.netbeans.api.lexer.TokenSequence;
 import org.netbeans.api.project.FileOwnerQuery;
 import org.netbeans.api.project.Project;
 import org.netbeans.lib.editor.hyperlink.spi.HyperlinkProvider;
-import org.openide.DialogDisplayer;
-import org.openide.NotifyDescriptor;
 import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataObject;
 import org.openide.util.Utilities;
@@ -77,7 +75,7 @@ public class MySpecialHyperlinkProvider implements HyperlinkProvider {
     public void performClickAction(Document document, int offset) {
         if (verifyState(document, offset)) {
             Project owner = FileOwnerQuery.getOwner(Utilities.actionsGlobalContext().lookup(DataObject.class).getPrimaryFile());
-            ExternalProcessBuilder processBuilder = new ExternalProcessBuilder("/usr/local/bin/lein").
+            ExternalProcessBuilder processBuilder = new ExternalProcessBuilder("lein").
                     addArgument("run").
                     addArgument("-m").
                     addArgument(namespaceName + "/" + methodName).
