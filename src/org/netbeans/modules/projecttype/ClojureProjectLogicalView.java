@@ -4,12 +4,18 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
-import javax.swing.JPopupMenu;
 import org.netbeans.api.extexecution.ExecutionDescriptor;
 import org.netbeans.api.extexecution.ExecutionService;
 import org.netbeans.api.extexecution.ExternalProcessBuilder;
+import static org.netbeans.modules.projecttype.ClojureActionProvider.COMMAND_DEPS;
+import static org.netbeans.modules.projecttype.ClojureActionProvider.COMMAND_HELP;
 import static org.netbeans.modules.projecttype.ClojureProject.ClojureProjectInformation.CUSTOMER_ICON;
 import org.netbeans.spi.project.ActionProvider;
+import static org.netbeans.spi.project.ActionProvider.COMMAND_BUILD;
+import static org.netbeans.spi.project.ActionProvider.COMMAND_CLEAN;
+import static org.netbeans.spi.project.ActionProvider.COMMAND_PROFILE;
+import static org.netbeans.spi.project.ActionProvider.COMMAND_REBUILD;
+import static org.netbeans.spi.project.ActionProvider.COMMAND_RUN;
 import org.netbeans.spi.project.ui.LogicalViewProvider;
 import org.netbeans.spi.project.ui.support.CommonProjectActions;
 import org.openide.filesystems.FileObject;
@@ -25,6 +31,9 @@ import org.openide.util.ImageUtilities;
 import org.openide.util.Lookup;
 import org.openide.util.lookup.Lookups;
 import org.openide.util.lookup.ProxyLookup;
+//import clojure.lang.Symbol;
+//import clojure.lang.Var;
+//import clojure.lang.RT;
 
 public class ClojureProjectLogicalView implements LogicalViewProvider {
 
@@ -70,17 +79,17 @@ public class ClojureProjectLogicalView implements LogicalViewProvider {
         @Override
         public Action[] getActions(boolean arg0) {
             return new Action[]{
-                new ProjectAction(ActionProvider.COMMAND_RUN, "Run", project),
+                new ProjectAction(COMMAND_RUN, "Run", project),
                 null,
-                new ProjectAction(ActionProvider.COMMAND_BUILD, "JAR", project),
-                new ProjectAction(ActionProvider.COMMAND_REBUILD, "Uber JAR", project),
+                new ProjectAction(COMMAND_DEPS, "Deps", project),
+                new ProjectAction(COMMAND_BUILD, "JAR", project),
+                new ProjectAction(COMMAND_REBUILD, "Uber JAR", project),
                 null,
-                new ProjectAction(ActionProvider.COMMAND_CLEAN, "Clean", project),
+                new ProjectAction(COMMAND_CLEAN, "Clean", project),
                 null,
                 CommonProjectActions.closeProjectAction(),
                 null,
-                new ProjectAction(ActionProvider.COMMAND_PROFILE, "Help", project),
-            };
+                new ProjectAction(COMMAND_HELP, "Help", project),};
         }
 
         @Override
@@ -97,7 +106,7 @@ public class ClojureProjectLogicalView implements LogicalViewProvider {
         public String getDisplayName() {
             return project.getProjectDirectory().getName();
         }
-        
+
     }
 
     private static class ProjectAction extends AbstractAction {
@@ -106,28 +115,32 @@ public class ClojureProjectLogicalView implements LogicalViewProvider {
         private final String command;
 
         public ProjectAction(String cmd, String displayName, ClojureProject prj) {
+            super(displayName);
             this.project = prj;
-            putValue(NAME, displayName);
             this.command = cmd;
         }
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            if (command.equals(ActionProvider.COMMAND_RUN)) {
+            if (command.equals(COMMAND_RUN)) {
                 processCommand("run");
-            } else if (command.equals(ActionProvider.COMMAND_CLEAN)) {
+            } else if (command.equals(COMMAND_DEPS)) {
+                processCommand("deps");
+            } else if (command.equals(COMMAND_CLEAN)) {
                 processCommand("clean");
-            } else if (command.equals(ActionProvider.COMMAND_BUILD)) {
+            } else if (command.equals(COMMAND_BUILD)) {
                 processCommand("jar");
-            } else if (command.equals(ActionProvider.COMMAND_REBUILD)) {
+            } else if (command.equals(COMMAND_REBUILD)) {
                 processCommand("uberjar");
-            } else if (command.equals(ActionProvider.COMMAND_PROFILE)) {
+            } else if (command.equals(COMMAND_HELP)) {
                 processCommand("help");
+            } else {
+                throw new IllegalArgumentException(String.format("Invalid command %s", command));
             }
         }
 
         private void processCommand(String command) {
-            ExternalProcessBuilder processBuilder = new ExternalProcessBuilder("/usr/local/bin/lein").
+            ExternalProcessBuilder processBuilder = new ExternalProcessBuilder("lein").
                     addArgument(command).
                     workingDirectory(FileUtil.toFile(project.getProjectDirectory()));
             ExecutionDescriptor descriptor = new ExecutionDescriptor().

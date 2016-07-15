@@ -5,7 +5,6 @@
 package org.clojure.lexer;
 
 import org.clojure.ClojureLexer;
-import org.netbeans.api.lexer.PartType;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 
@@ -15,8 +14,8 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
  */
 class NBClojureLexer implements Lexer<ClojureTokenId> {
 
-    private LexerRestartInfo<ClojureTokenId> info;
-    private ClojureLexer clojureLexer;
+    private final LexerRestartInfo<ClojureTokenId> info;
+    private final ClojureLexer clojureLexer;
 
     public NBClojureLexer(LexerRestartInfo<ClojureTokenId> info) {
 	this.info = info;
@@ -28,7 +27,7 @@ class NBClojureLexer implements Lexer<ClojureTokenId> {
     public org.netbeans.api.lexer.Token<ClojureTokenId> nextToken() {
 	org.antlr.runtime.Token token = clojureLexer.nextToken();
 	org.netbeans.api.lexer.Token<ClojureTokenId> resultToken = null;
-	if (token.getType() != clojureLexer.EOF) {
+	if (token.getType() != ClojureLexer.EOF) {
 	    ClojureTokenId tokenId = ClojureLanguageHierarchy.getToken(token.getType());
 	    resultToken = info.tokenFactory().createToken(tokenId);
 	}
